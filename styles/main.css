@@ -22,6 +22,9 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header and Navigation */
@@ -53,30 +56,6 @@ body {
 .nav-menu {
     display: flex;
     gap: 1rem;
-}
-
-/* Language Navigation */
-.language-toggle {
-    max-width: 1200px;
-    margin: 1rem auto;
-    padding: 0.5rem 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    border-bottom: 1px solid #e9ecef;
-}
-
-.language-toggle a {
-    color: #666;
-    text-decoration: none;
-    padding: 0.25rem 0.5rem;
-    transition: color 0.3s ease;
-}
-
-.language-toggle a:hover,
-.language-toggle a:focus {
-    color: #333;
-    text-decoration: underline;
 }
 
 /* Dropdown Menu */
@@ -123,6 +102,7 @@ main {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem 1rem;
+    flex: 1;
 }
 
 /* Typography */
@@ -135,15 +115,51 @@ h1 {
 }
 
 /* Content sections */
-.content-section,
-.bio-section {
+.content-section {
     margin-bottom: 40px;
 }
 
-.content-section p,
-.bio-section p {
+.content-section p {
     margin-bottom: 15px;
     text-align: justify;
+}
+
+/* Footer and Language Selector */
+.site-footer {
+    margin-top: auto;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}
+
+.language-selector {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.language-selector a {
+    color: #666;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.language-selector a:hover,
+.language-selector a:focus {
+    color: #333;
+    text-decoration: underline;
+}
+
+.language-selector a.active {
+    color: #333;
+    font-weight: bold;
+    pointer-events: none;
 }
 
 /* Responsive adjustments */
@@ -165,9 +181,7 @@ h1 {
         padding-left: 1rem;
     }
 
-    .language-toggle {
-        gap: 1rem;
-        flex-wrap: wrap;
+    .language-selector {
         justify-content: center;
     }
 
