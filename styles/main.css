@@ -50,10 +50,12 @@ h1 {
     margin: 20px 0;
     padding: 10px 0;
     border-bottom: 1px solid #eee;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .language-toggle a {
-    margin-right: 20px;
     color: #0066cc;
     text-decoration: none;
     padding: 5px 10px;
@@ -101,8 +103,12 @@ h1 {
         font-size: 1.5em;
     }
     
+    .language-toggle {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
     .language-toggle a {
-        display: block;
-        margin-bottom: 10px;
+        text-align: center;
     }
 }
