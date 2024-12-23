@@ -1,5 +1,21 @@
 /* Main styles for biography page */
 
+/* Accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Base styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -10,7 +26,7 @@ body {
 }
 
 /* Typography */
-h1, h2 {
+h1 {
     color: #333;
     border-bottom: 2px solid #333;
     padding-bottom: 10px;
@@ -45,14 +61,26 @@ h1, h2 {
     transition: background-color 0.2s ease;
 }
 
-.language-toggle a:hover {
+.language-toggle a:hover,
+.language-toggle a:focus {
     background-color: #f0f0f0;
     text-decoration: none;
+    outline: 2px solid #0066cc;
 }
 
 /* Content sections */
 .bio-content {
     padding: 20px 0;
+}
+
+/* Noscript notice */
+.notice {
+    background: #fff3cd;
+    border: 1px solid #ffeeba;
+    color: #856404;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 4px;
 }
 
 /* Responsive adjustments */
@@ -69,7 +97,7 @@ h1, h2 {
         margin: 0 10px;
     }
     
-    h1, h2 {
+    h1 {
         font-size: 1.5em;
     }
     
